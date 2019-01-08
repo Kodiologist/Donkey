@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+   <meta charset="UTF-8">
+   <title>Task</title>
+
+<style>
+.mode
+   {display: none;}
+
+#instructions
+   {text-align: center;}
+
+#trial-counter-para
+   {margin-top: 2em;
+    text-align: center;
+    font-size: xx-large;}
+</style>
+
+<script src="task.js"></script>
+
+<body>
+
+<noscript><p>This HIT requires JavaScript.</p></noscript>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="mode" id="mode--return">
+<p>You've already completed this task. Please return this HIT.</p>
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="mode" id="mode--consent">
+CONSENT
+
+<form id="consent-form">
+<input type="text" class="consent-statement" id="consent-statement" value="">
+<button type="submit" name="consent-button" value="submitted">OK</button>
+</form>
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="mode" id="mode--decision-making">
+
+<p id="instructions">
+To complete this task, just make a bunch of decisions.<br>
+There are two options to choose from. Nothing special happens
+when you make a choice, so choose whichever you like.<br>
+Press the
+"<span id="key1"></span>" key to choose the first option,
+or the "<span id="key2"></span>" key to choose the second.</p>
+
+<div id="trial-counter-para">
+Trials left:
+<span id="trial-counter"></span></div>
+
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="mode" id="mode--done">
+<img alt="U DID IT CHAMP" src="https://i.imgur.com/F5T8aVB.jpg">
+<p>Thanks for helping me out.</p>
+<form id="submission-form" method="post">
+<input type="hidden" value="" name="assignmentId" id="assignmentId"/>
+<input type="submit" name="submitButton" value="Submit"/>
+</form>
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+</body></html>
