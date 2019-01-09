@@ -5,8 +5,6 @@ window.onload = function() {
 // * Globals
 // ------------------------------------------------------------
 
-var previous_worker_ids = [];
-
 var chose_key1 = [];
 var rts = [];
 
@@ -34,22 +32,14 @@ var startup = function()
 
     if (typeof turkSetAssignmentID !== 'undefined')
       // We're on MTurk.
-       {if (previous_worker_ids.indexOf(turkGetParam('workerId', '')) != -1)
-            mode__return();
-        else
-           {turkSetAssignmentID();
-            E('submission-form').action =
-                turkGetSubmitToHost() + '/mturk/externalSubmit';
-            mode__consent();}}
-    else
-        mode__consent();};
+       {turkSetAssignmentID();
+        E('submission-form').action =
+            turkGetSubmitToHost() + '/mturk/externalSubmit';}
+    mode__consent();};
 
 // ------------------------------------------------------------
 // * Modes
 // ------------------------------------------------------------
-
-var mode__return = function()
-   {E('mode--return').style.display = 'block';};
 
 var mode__consent = function()
    {E('consent-form').addEventListener('submit', function(e)
